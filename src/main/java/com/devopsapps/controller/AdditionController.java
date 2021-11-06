@@ -9,14 +9,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class AdditionController {
-
-	private static int sum = 0;
 	
 	@RequestMapping("add")
 	public ModelAndView add(HttpServletRequest request, HttpServletResponse response) {
 		int num1 = Integer.parseInt(request.getParameter("num1"));
 		int num2 = Integer.parseInt(request.getParameter("num2"));
-		sum = num1 + num2;
+		int sum = num1 + num2;
 		
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("result", sum);
