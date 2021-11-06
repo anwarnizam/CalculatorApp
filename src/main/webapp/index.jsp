@@ -1,4 +1,7 @@
 <html>
+<head>
+<title>Calculator</title>
+</head>
 <body>
 <h2>Calculator</h2>
 <form action = "add">
