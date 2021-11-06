@@ -14,6 +14,7 @@ public class AdditionController {
 	public ModelAndView add(HttpServletRequest request, HttpServletResponse response) {
 		int num1 = Integer.parseInt(request.getParameter("num1"));
 		int num2 = Integer.parseInt(request.getParameter("num2"));
+		//made local to fix sonarqube issue code smell, earlier was global with private static
 		int sum = num1 + num2;
 		
 		ModelAndView mv = new ModelAndView();
