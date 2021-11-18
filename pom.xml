@@ -7,6 +7,14 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>CalculatorApp Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  <!-- Use this property if Force authentication is enabled in sonar server.
+  		 You can check by log-in to server and go to Administration -> Configuration -> Security -->
+  <properties>
+  	<sonar.login>admin</sonar.login>
+  	<sonar.password>admin</sonar.password>
+  	<!-- Not needed if localhost:9000 -->
+  	<sonar.host.url>http://localhost:9000</sonar.host.url>
+  </properties>
   <dependencies>
 	  <dependency>
 	    <groupId>org.springframework</groupId>
@@ -42,5 +50,14 @@
   </dependencies>
   <build>
     <finalName>CalculatorApp</finalName>
+    <!-- If want to use specific sonar plugin instead of maven default sonar plugin-->
+    <!-- <plugins>
+    	<plugin>
+    		<groupId>org.sonarsource.scanner.maven</groupId>
+    		<artifactId>sonar-maven-plugin</artifactId>
+    		<version>3.6.0.1398</version>
+    	</plugin>
+    </plugins>
+     -->
   </build>
 </project>

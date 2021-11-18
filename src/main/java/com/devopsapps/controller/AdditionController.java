@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class AdditionController {
 	
-	//private static int sum = 0;
+
 	
 	//@RequestMapping("add")
 	//Adding method parameter to fix SonarQube issue type - Vulnerability
