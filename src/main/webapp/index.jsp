@@ -4,6 +4,10 @@
 <title>Calculator</title>
 </head>
 <body>
+<!--
+wtpwebapps is an eclipse-specific folder created when you run a dynamic web project on Tomcat within eclipse.
+Webapps directory is within the Tomcat home and it's where you copy over your WAR files manually.
+ -->
 <h2>Calculator</h2>
 <form action = "add">
 Number1: <input type = "number" name = "num1"></input><br/>

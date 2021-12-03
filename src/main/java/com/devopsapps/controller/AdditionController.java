@@ -15,7 +15,7 @@ public class AdditionController {
 	
 	//@RequestMapping("add")
 	//Adding method parameter to fix SonarQube issue type - Vulnerability
-	@RequestMapping(value = "add", method = RequestMethod.POST)
+	@RequestMapping(value = "add", method = RequestMethod.GET)
 	public ModelAndView add(HttpServletRequest request, HttpServletResponse response) {
 		int num1 = Integer.parseInt(request.getParameter("num1"));
 		int num2 = Integer.parseInt(request.getParameter("num2"));
