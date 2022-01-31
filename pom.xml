@@ -9,6 +9,13 @@
   <url>http://maven.apache.org</url>
   <!-- Use this property if Force authentication is enabled in sonar server.
   		 You can check by log-in to server and go to Administration -> Configuration -> Security -->
+	<distributionManagement>
+	    <snapshotRepository>
+	        <id>calculator-app-snapshot</id>
+	        <name>Calculator App JFrog Snapshots Repository</name>
+	        <url>http://localhost:8082/artifactory/calculator-app-snapshot</url>
+	    </snapshotRepository>
+	</distributionManagement>
   <properties>
   	<sonar.login>admin</sonar.login>
   	<sonar.password>admin</sonar.password>
@@ -60,16 +67,16 @@
     		Then execute mvn clean tomcat7:deploy or mvn clean tomcat7:redeploy
      -->
       
-      <plugin>
+      <!-- <plugin>
         <groupId>org.apache.tomcat.maven</groupId>
         <artifactId>tomcat7-maven-plugin</artifactId>
         <version>2.2</version>
-        <configuration>
+        <configuration> -->
           <!-- Indicates the server name used in settings.xml  -->
-          <server>tomcat</server>
+          <!--<server>tomcat</server>
           <url>http://localhost:8085/manager/text</url>
         </configuration>
-      </plugin>
+      </plugin>-->
       
     <!-- If want to use specific sonar plugin instead of maven default sonar plugin-->
     	<!-- <plugin>
