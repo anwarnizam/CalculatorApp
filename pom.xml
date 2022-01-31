@@ -54,22 +54,22 @@
     
     <!-- Deploy war file to local tomcat webapps folder and also to tomcat server gui - Manager app.
     		But for this to happen:
-    		Add a user with role manager-script in tomcat-users.xml
-    		Add this tomcat user under a corresponding server block to your maven settings.xml
-    		Tomcat[container] must be running and maven command will be
-    		Then execute mvn clean tomcat7:deploy or mvn clean tomcat:redeploy
+    		1. Add a user with role manager-script in tomcat-users.xml
+    		2. Add this tomcat user under a corresponding <server> block to your maven settings.xml
+    		3. Tomcat[container] must be running
+    		Then execute mvn clean tomcat7:deploy or mvn clean tomcat7:redeploy
      -->
       
-      <!-- <plugin>
+      <plugin>
         <groupId>org.apache.tomcat.maven</groupId>
         <artifactId>tomcat7-maven-plugin</artifactId>
         <version>2.2</version>
         <configuration>
-          Indicates the server used in settings.xml
+          <!-- Indicates the server name used in settings.xml  -->
           <server>tomcat</server>
           <url>http://localhost:8085/manager/text</url>
         </configuration>
-      </plugin> -->
+      </plugin>
       
     <!-- If want to use specific sonar plugin instead of maven default sonar plugin-->
     	<!-- <plugin>
@@ -82,8 +82,9 @@
   
   <!--
     To have maven automatically deploy the exploded WAR to your local tomcat instance or webapps folder:
-    create profile with id development and configure the property "tomcat.home" in your settings.xml and 
-    enable this profile as a default active profile in your settings.xml or on demand with the -P flag
+    	create profile with id development and configure the property "tomcat.home" in your settings.xml
+    	with tomcat installation directory and enable this profile as a default active profile in your
+    	settings.xml or not active as default in settings then on demand with the -P flag
     -->
  
   <profiles>
@@ -116,8 +117,8 @@
                   <!-- This overrides the default WAR deployment and deploys the exploded war -->
                   <location>${project.build.directory}/${project.build.finalName}</location>
                   <properties>
-                    <!-- This makes sure the final directory/artifact matches the build name and not the artifact name
-                         which are different -->
+                    <!-- This makes sure the final directory/artifact matches the build name and 
+                    		not with the artifact name which is different -->
                     <context>${project.build.finalName}</context>
                   </properties>
                 </deployable>
