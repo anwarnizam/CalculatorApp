@@ -9,13 +9,13 @@
   <url>http://maven.apache.org</url>
   <!-- Use this property if Force authentication is enabled in sonar server.
   		 You can check by log-in to server and go to Administration -> Configuration -> Security -->
-	<distributionManagement>
-	    <snapshotRepository>
-	        <id>calculator-app-snapshot</id>
-	        <name>Calculator App JFrog Snapshots Repository</name>
-	        <url>http://localhost:8082/artifactory/calculator-app-snapshot</url>
-	    </snapshotRepository>
-	</distributionManagement>
+  <distributionManagement>
+	<snapshotRepository>
+	  <id>snapshots</id>
+	     <name>Calculator App JFrog Snapshots Repository</name>
+	     <url>http://localhost:8082/artifactory/calculator-app-snapshot</url>
+	</snapshotRepository>
+  </distributionManagement>
   <properties>
   	<sonar.login>admin</sonar.login>
   	<sonar.password>admin</sonar.password>
