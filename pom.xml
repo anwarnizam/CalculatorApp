@@ -7,8 +7,9 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>CalculatorApp Maven Webapp</name>
   <url>http://maven.apache.org</url>
-  <!-- Use this property if Force authentication is enabled in sonar server.
-  		 You can check by log-in to server and go to Administration -> Configuration -> Security -->
+  <!-- Use this to send the war to JFrog Artifactory when using "mvn deploy" command. For this to work,
+  		 the <id/> sections in your <distributionManagement/> tag of your pom.xml should match those in your 
+  		 <server/> sections of your settings.xml file. -->
   <distributionManagement>
 	<snapshotRepository>
 	  <id>snapshots</id>
@@ -16,6 +17,8 @@
 	     <url>http://localhost:8082/artifactory/calculator-app-snapshot</url>
 	</snapshotRepository>
   </distributionManagement>
+  <!-- Use this property if Force authentication is enabled in sonar server.
+  		 You can check by log-in to server and go to Administration -> Configuration -> Security -->
   <properties>
   	<sonar.login>admin</sonar.login>
   	<sonar.password>admin</sonar.password>
